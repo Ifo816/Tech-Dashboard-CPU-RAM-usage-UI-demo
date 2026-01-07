@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #0a0a0f;
+    color: #00f0ff;
+}
+
+header {
+    text-align: center;
+    padding: 2rem;
+    font-size: 2rem;
+    text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+}
+
+.stats-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #00f0ff;
+    border-radius: 15px;
+    padding: 2rem;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff55;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #00f0ff, 0 0 60px #00f0ff77;
+}
+
+.card h2 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.card p {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.chart-section {
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+canvas {
+    background: #111;
+    border: 2px solid #00f0ff;
+    border-radius: 15px;
+}
