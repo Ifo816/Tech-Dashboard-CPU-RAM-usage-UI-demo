@@ -1,6 +1,6 @@
 # Tech Neon Dashboard Demo
 
-**Live Demo:** [https://democpu-ram-network-frontend.netlify.app/](https://democpu-ram-network-frontend.netlify.app/)
+
 
 A cyberpunk-themed dashboard showcasing **CPU, RAM, and network usage** (simulated), built with HTML, CSS, and JavaScript.  
 This project demonstrates **interactive charts, dynamic updates, and responsive design**.
@@ -30,6 +30,7 @@ This project includes:
 
 ## Author
 Built by Ivan Horváth, with AI-assisted guidance for faster development.
+
 
 
 
