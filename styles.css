@@ -8,12 +8,13 @@ body {
 header {
     text-align: center;
     padding: 2rem;
-    font-size: 2rem;
     text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
 }
 header h1 {
-   color: #00f0ff;
+    color: #00f0ff;
+    font-size: 2rem;
 }
+
 .stats-cards {
     display: flex;
     justify-content: center;
@@ -27,7 +28,7 @@ header h1 {
     border: 2px solid #00f0ff;
     border-radius: 15px;
     padding: 2rem;
-    width: min(200px 90%);
+    width: min(200px, 90%);
     text-align: center;
     box-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff55;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -48,24 +49,64 @@ header h1 {
     font-weight: bold;
 }
 
+/* Progress bars */
+.progress {
+    background: #111;
+    border-radius: 8px;
+    height: 12px;
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+.progress-bar.cpu {
+    background: linear-gradient(90deg, #00f0ff, #00bfff);
+}
+
+.progress-bar.ram {
+    background: linear-gradient(90deg, #4caf50, #2e7d32);
+}
+
+.progress-bar.network {
+    background: linear-gradient(90deg, #ff9800, #f44336);
+}
+
 .chart-section {
     max-width: 800px;
     margin: 2rem auto;
 }
 
 canvas {
+    width: 100% !important;
+    height: auto !important;
     background: #111;
     border: 2px solid #00f0ff;
     border-radius: 15px;
 }
 
+/* Mobile adjustments */
 @media (max-width: 480px) {
-    header{
+    header h1{
         font-size: 1.4rem;
-        padding: 1.2rem;
     }
-
+    .card{
+        padding: 1rem;
+        width: 90%;
+    }
     .card p {
         font-size: 1.6rem;                                                   
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
     }
 }
