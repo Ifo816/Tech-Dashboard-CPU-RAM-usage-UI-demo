@@ -11,26 +11,37 @@
 <header>
     <h1>CyberTech CPU Dashboard</h1>
 </header>
-<main>
-<section class="stats-cards" aria-label="System statistics">
+
+<section class="stats-cards">
     <div class="card">
         <h2>CPU Usage</h2>
-        <p id="cpu-usage" aria-live="polite">0%</p>
+        <p id="cpu-usage">0%</p>
+        <div class="progress">
+            <div class="progress-bar cpu"></div>
+        </div>
     </div>
+
     <div class="card">
         <h2>RAM Usage</h2>
-        <p id="ram-usage" aria-live="polite">0%</p>
+        <p id="ram-usage">0%</p>
+        <div class="progress">
+            <div class="progress-bar ram"></div>
+        </div>
     </div>
+
     <div class="card">
         <h2>Network</h2>
-        <p id="network-speed" aria-live="polite">0 KB/s</p>
+        <p id="network-speed">0 KB/s</p>
+        <div class="progress">
+            <div class="progress-bar network"></div>
+        </div>
     </div>
 </section>
 
 <div class="chart-section">
     <canvas id="cpuChart"></canvas>
 </div>
-</main>
+
 <footer>
     <p>&copy; 2026 CyberTech Dashboard</p>
 </footer>
