@@ -1,52 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyberpunk CPU Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #0a0a0f;
+    color: #9ff7ff;
+}
 
-<header>
-    <h1>CyberTech CPU Dashboard</h1>
-</header>
+header {
+    text-align: center;
+    padding: 2rem;
+    text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+}
+header h1 {
+    color: #00f0ff;
+    font-size: 2rem;
+}
 
-<section class="stats-cards">
-    <div class="card">
-        <h2>CPU Usage</h2>
-        <p id="cpu-usage">0%</p>
-        <div class="progress">
-            <div class="progress-bar cpu"></div>
-        </div>
-    </div>
+.stats-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem;
+    flex-wrap: wrap;
+}
 
-    <div class="card">
-        <h2>RAM Usage</h2>
-        <p id="ram-usage">0%</p>
-        <div class="progress">
-            <div class="progress-bar ram"></div>
-        </div>
-    </div>
+.card {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #00f0ff;
+    border-radius: 15px;
+    padding: 2rem;
+    width: min(200px, 90%);
+    text-align: center;
+    box-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff55;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
-    <div class="card">
-        <h2>Network</h2>
-        <p id="network-speed">0 KB/s</p>
-        <div class="progress">
-            <div class="progress-bar network"></div>
-        </div>
-    </div>
-</section>
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #00f0ff, 0 0 60px #00f0ff77;
+}
 
-<div class="chart-section">
-    <canvas id="cpuChart"></canvas>
-</div>
+.card h2 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
 
-<footer>
-    <p>&copy; 2026 CyberTech Dashboard</p>
-</footer>
+.card p {
+    font-size: 2rem;
+    font-weight: bold;
+}
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="script.js"></script>
-</body>
-</html>
+/* Progress bars */
+.progress {
+    background: #111;
+    border-radius: 8px;
+    height: 12px;
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+.progress-bar.cpu {
+    background: linear-gradient(90deg, #00f0ff, #00bfff);
+}
+
+.progress-bar.ram {
+    background: linear-gradient(90deg, #4caf50, #2e7d32);
+}
+
+.progress-bar.network {
+    background: linear-gradient(90deg, #ff9800, #f44336);
+}
+
+.chart-section {
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+canvas {
+    width: 100% !important;
+    height: auto !important;
+    background: #111;
+    border: 2px solid #00f0ff;
+    border-radius: 15px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+    header h1{
+        font-size: 1.4rem;
+    }
+    .card{
+        padding: 1rem;
+        width: 90%;
+    }
+    .card p {
+        font-size: 1.6rem;                                                   
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
