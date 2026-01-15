@@ -11,20 +11,27 @@ const cpuChart = new Chart(ctx, {
     data: {
         labels: [],
         datasets: [{
-            label: 'CPU Usage (%)',
-            data: [],
-            borderWidth: 2,
-            tension: 0.4
-        }]
+    label: 'CPU Usage (%)',
+    data: [],
+    borderColor: '#00f0ff',            // bright cyberpunk blue line
+    backgroundColor: 'rgba(0, 240, 255, 0.15)', // faint glow under line
+    borderWidth: 2,
+    tension: 0.4,
+    fill: true                         // fills area under the line
+}]
+
     },
     options: {
         responsive: true,
         scales: {
-            y: {
-                min: 0,
-                max: 100
-            }
-        }
+    x: { grid: { display: false } },   // hide vertical lines
+    y: { 
+        min: 0,
+        max: 100,
+        grid: { color: '#222' }        // subtle horizontal lines
+    }
+}
+
     }
 });
 
